@@ -28,6 +28,7 @@
    - np.random - random number generation
    - np.linalg - routines for linear algebra
    - np.fft    - discrete fourier transform
+     * Apollo image denoising example from elegant scipy
 
 # NumPy Now
  - Show packages that depend on numpy
