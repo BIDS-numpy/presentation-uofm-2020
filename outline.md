@@ -20,6 +20,8 @@ Where is NumPy used?
  - [To discover fundamental particles like the Higgs Boson](https://github.com/cms-sw/cmssw)
    * Also [scikit-hep](https://scikit-hep.org/)
  - [Neuroimaging](https://nipy.org/nibabel/) - nipy uses `ndarray` as the fundamental structure for the entire stack
+   * fMRI visualization example from [section 3.4](https://www.frontiersin.org/articles/10.3389/fninf.2014.00014/full#h4)
+     is a nice, brief example
    
 
 ### Links/Resources
