@@ -17,6 +17,9 @@ Where is NumPy used?
  - To produce the first image of a black hole 
    [Event Horizon Telescope Collaboration](https://github.com/achael/eht-imaging)
  - [To detect the gravitational wave signature from a neutron star merger](https://github.com/gwastro/pycbc)
+ - [To discover fundamental particles like the Higgs Boson](https://github.com/cms-sw/cmssw)
+   * Also [scikit-hep](https://scikit-hep.org/)
+   
 
 ### Links/Resources
  - numpy.org (new site by then?)
