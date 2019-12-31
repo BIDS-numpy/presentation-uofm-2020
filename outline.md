@@ -19,6 +19,7 @@ Where is NumPy used?
  - [To detect the gravitational wave signature from a neutron star merger](https://github.com/gwastro/pycbc)
  - [To discover fundamental particles like the Higgs Boson](https://github.com/cms-sw/cmssw)
    * Also [scikit-hep](https://scikit-hep.org/)
+ - [Neuroimaging](https://nipy.org/nibabel/) - nipy uses `ndarray` as the fundamental structure for the entire stack
    
 
 ### Links/Resources
