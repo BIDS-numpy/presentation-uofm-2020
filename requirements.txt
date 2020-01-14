@@ -1,3 +1,9 @@
 numpy
-notebook
+scipy
 matplotlib
+jupyter
+notebook
+nibabel
+pycbc
+lalsuite
+mypy
