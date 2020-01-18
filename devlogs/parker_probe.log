@@ -1,0 +1,384 @@
+# IPython log file
+
+from spacepy import pycdf
+cdf = pycdf.CDF('Downloads/psp_swp_spc_l2i_20181031_v01.cdf')
+cdf
+mv_lo = cdf['mv_lo']
+mv_lo
+volt = mv_lo[:, 0]
+volt
+dcfd = cdf['diff_charge_flux_density'][:,0]
+volt
+dcfd
+t = cdf['measurement_time']
+t
+t = cdf['measurement_time'][:,0]
+t
+np.unique(t)
+import numpy as np
+np.unique(t)
+cdf
+cdf['Epoch']
+cdf['Epoch'][:,0]
+cdf['Epoch'][0]
+import matplotlib.pyplot as plt
+t = cdf['Epoch']
+t
+np.array(t)
+t
+t[:]
+t = cdf['Epoch'][:]
+t.shape
+t[-1]
+t[0]
+plot(t)
+plt.plot(t)
+plt.show()
+plt.plot(t, volt)
+plt.show()
+plot(volt, dcfd)
+plt.plot(volt, dcfd)
+plt.show()
+plot(t, dcfd)
+plt.plot(t, dcfd)
+plt.show()
+dcfd = cdf['diff_charge_flux_density'][0,:]
+dcfd
+volt
+mvlo
+mv_lo
+mv_lo[0,:]
+plt.plot(t, dcfd)
+dcfd = cdf['diff_charge_flux_density'][:,0]
+plt.plot(t, dcfd)
+plt.show()
+dcfd = cdf['diff_charge_flux_density']
+plt.plot(t, dcfd); plt.show()
+plt.plot(t, dcfd[:,0:10]); plt.show()
+dcfd
+dcfd.attrs
+dcfd
+dcfd = cdf['diff_charge_flux_density'][:,:]
+dcfd
+dcfd[dcfd == cdf['diff_charge_flux_density'].attrs['FILLVAL']] = np.nan
+dcfd
+plt.plot(t, dcfd[:,0:10]); plt.show()
+get_ipython().run_line_magic('pinfo', 'np.histogram2d')
+plt.hist(t, dcfc[:,0])
+plt.hist(t, dcfd[:,0])
+plt.hist(t, dcfd[0,:])
+dcfd
+dcfd[:,0]
+dcfd[:,0].shape
+dcfd[0,:]
+plt.hist(t, dcfd[0,:], bins=10, range=(0,50))
+plt.hist(dcfd[:,0])
+plt.show()
+plt.show()
+plt.hist(dcfd[:,0])
+plt.show()
+np.histogram>
+get_ipython().run_line_magic('pinfo', 'np.histogram')
+dfcd
+dcfd
+dcfd[:,0]
+dcfd[0,:]
+dcfd[1,:]
+plot(t, dcfd.max(axis=1)); plt.show()
+plt.plot(t, dcfd.max(axis=1)); plt.show()
+plt.plot(t, dcfd.max(axis=0)); plt.show()
+plt.plot(t, dcfd.max(axis=1)); plt.show()
+dcfd.max(axis=1)
+dcfd = cdf['diff_charge_flux_density'][:,:]
+dcfd.max(axis=1)
+plt.plot(t, dcfd.max(axis=1)); plt.show()
+plt.semilogy(t, dcfd.max(axis=1)); plt.show()
+mv_lo = cdf['mv_lo']
+mv_lo.shape
+mv_hi = cdf['mv_hi']
+mv_hi.shape
+mv_hi
+mv_hi[0,:]
+mv_hi
+mv_lo
+mv_hi.shape
+mv_hi = mv_hi[:,:]
+mv_lo = mv_lo[:,:]
+mv_hi
+mv_lo
+mv_hi[mv_hi == -1e31] = np.nan
+mv_hi
+mv_lo[mv_lo == -1e31] = np.nan
+mv_hi
+mv_lo
+V = (mv_hi - mv_lo) / 2
+V
+V = (mv_hi + mv_lo) / 2
+V
+plt.plot(t, V); plt.show()
+V
+V.shape
+V[:, 0:30]
+np.unique(V)
+np.unique(V[:, 0:30])
+V.max()
+V[V != np.nan].max()
+V[np.isfinite(V)].max()
+mv_lo
+mv_hi
+mv_lo[np.isfinte(mv_lo)].min()
+mv_lo[np.isfinite(mv_lo)].min()
+dcfd.max()
+dcfd
+V
+t
+t.shape
+get_ipython().run_line_magic('pinfo', 'plt.pcolor')
+plt.pcolormesh(V, dcfd)
+V.shape
+dcfd.shape
+dcfd
+get_ipython().run_line_magic('pinfo', 'plt.pcolormesh')
+plt.pcolormesh(dcfd); plt.show()
+plt.pcolormesh(dcfd); plt.colorbar(); plt.show()
+dcfd
+dcfd[dcfd == -1e31] = np.nan
+plt.pcolormesh(dcfd); plt.colorbar(); plt.show()
+plt.pcolormesh(dcfd[:,0:30].T); plt.colorbar(); plt.show()
+plt.pcolormesh(np.log(dcfd[:,0:30]).T); plt.colorbar(); plt.show()
+t
+t
+plt.pcolormesh(dcfd[:,0:30].T); plt.colorbar(); plt.show()
+dcfd
+mv_lo
+mv_hi
+plt.pcolormesh(mv_lo, mv_hi, dcfd); plt.show();
+plt.pcolor(mv_lo, mv_hi, dcfd); plt.show();
+np.unique(V)
+np.unique(V[np.isfinite(V)])
+np.unique(mv_lo[np.isfinite(mv_lo)])
+np.unique(mv_hi[np.isfinite(mv_hi)])
+mt = cdf['measurement_time']
+mt
+mt = cdf['measurement_time'][:,:]
+mt
+mt[:,0]
+mt[:,0].shape
+mt[:,1]
+mt[:,2].shape
+mt[:,2]
+mt.shape
+volt
+V
+V.shape
+V[:,0]
+V[:,0].shape
+V[:,0]
+get_ipython().run_line_magic('pylab', '')
+plot(t, V[:,0])
+np.all(V[:,0] == V[:,1])
+V[:,0]
+V[:,1]
+np.sum(V[:,0] == V[:,1])
+np.sum(V[:,0] == V[:,2])
+np.sum(V[:,0] == V[:,3])
+np.sum(dcfd[:,0] == dcfd[:,0])
+V[:,0]
+V[:,1]
+V[:,3]
+V[:,5]
+V[:,20]
+V[:,30]
+get_ipython().set_next_input('h2, xx, yy = np.histogram2d');get_ipython().run_line_magic('pinfo', 'np.histogram2d')
+plot(t, V[:,30])
+get_ipython().run_line_magic('pinfo', 'np.unique')
+np.unique(V, axis=1)
+np.unique(V, axis=0)
+_194.shape
+V[:,30] == V[:,29]
+V[:,0] == V[:,1]
+dcfd[:,0] == dcfd[:,1]
+dcfd
+dcfd[:,0]
+dcfd[:,1]
+np.unique(V)
+np.unique(V[np.isfinite(V)])
+v_bins = np.unique(V[np.isfinite(V)])
+dcfd[V == v_bins[0]]
+dcfd[V == v_bins[0]].shape
+dcfd[V == v_bins[0]].sum()
+dcfd[V == v_bins[0]].mean()
+V == v_bins
+V
+vbins
+v_bins
+V == v_bins[0]
+np.sum(V == v_bins[0])
+np.where(V == v_bins[0])
+get_ipython().run_line_magic('pinfo', 'np.where')
+t
+x, y = np.where(V == v_bins[0])
+x
+y
+x[:128]
+y[:128]
+t[x]
+plot(t[x])
+plot(t[x])
+V
+plot(V[:,0])
+plot(V[0,:])
+plot(V[1,:])
+plot(V[2,:])
+plot(V[3,:])
+V
+V.shape
+plot(V.T)
+V
+plot(V[3,:])
+dcfd
+dcfd.shape
+dcfd.T
+dcfd.T.shape
+V.T.shape
+V = V.T
+V
+V.shape
+V[:30, :]
+pcolor
+get_ipython().run_line_magic('pinfo', 'pcolor')
+dcfd = dcfd.T
+dcfd.shape
+dcfd
+V[:10,:]
+V[:5,:]
+dcfd[:5,:]
+mt
+mt.shape
+mt = mt.T
+mt
+mt[:,5,:]
+mt[:5,:]
+t[0]
+t[1]
+t[1] - t[0]
+mt[0][30] - mt[0][0]
+mt
+mt[0].sh
+mt[0].shape
+mt[30][0]
+t[1] - t[0]
+mt[30][0] - mt[0][0]
+V
+V[:5,:]
+V.shape
+V[:30,0]
+V[:40,0]
+plot(V[:,0], dcfd[:,0])
+plot(V[:,1], dcfd[:,1])
+plot(V[:,2], dcfd[:,2])
+idx = 100
+plot(V[:,idx], dcfd[:,idx])
+idx = 10000
+plot(V[:,idx], dcfd[:,idx])
+get_ipython().run_line_magic('pinfo', 'plt.pcolor')
+get_ipython().run_line_magic('pinfo', 'plt.specgram')
+dcfd
+plt.imshow(dcfd)
+plt.imshow(dcfd)
+plot(V[:,idx], dcfd[:,idx])
+plt.pcolormesh(dcfd)
+plt.pcolormesh(dcfd[:,:36])
+plt.pcolormesh(dcfd[:36,:])
+plt.pcolormesh(dcfd[:32,:])
+plt.pcolormesh(dcfd[:31,:])
+get_ipython().run_line_magic('pinfo', 'plt.pcolormesh')
+np.unique(V)
+V
+V.shape
+dcfd.shape
+plt.pcolormesh(V, t[np.newaxis,:], dcfd)
+t
+t.shape
+X.sh
+V.shape
+plt.pcolormesh(dcfd[:31,:])
+plt.pcolormesh(V[:31,:], t[np.newaxis,:], dcfd[:31,:])
+V[:31,:]
+np.all(np.isfinite(V[:31,:]))
+plt.pcolor(V[:31,:], t[np.newaxis,:], dcfd[:31,:])
+plt.pcolor(V[:31,:], t, dcfd[:31,:])
+plt.pcolormesh(dcfd[:31,:])
+plt.pcolormesh(np.log(dcfd[:31,:]))
+dcfd.min()
+dcfd[:31,:].min()
+np.log(nan)
+dcfd[:31,:].min()
+dcfd[np.isfinite(dcfd)].min()
+np.sum(dcfd[np.isfinite(dcfd)] < 0)
+np.log(-0.499)
+np.log(0)
+plt.pcolormesh(np.log(dcfd[:31,:]))
+plt.pcolormesh(V[:31,:], t[np.newaxis,:], dcfd[:31,:])
+plt.pcolormesh(V[3:31,:], t[np.newaxis,:], dcfd[3:31,:])
+V[:31,:].max()
+np.sum(~np.isfinite(V[:31,:]))_
+np.sum(~np.isfinite(V[:31,:]))
+np.sum(~np.isfinite(dcfd[:31,:]))
+~np.isfinite(dcfd[:31,:])
+np.any(~np.isfinite(dcfd[:31,:]), axis=1)
+np.any(~np.isfinite(dcfd[:31,:]), axis=1).shape
+np.any(~np.isfinite(dcfd[:31,:]), axis=0).shape
+np.any(~np.isfinite(dcfd[:31,:]), axis=0)
+bad_data_mask = ~np.any(~np.isfinite(V[:31,:]), axis=0)
+sum(bad_data_mask)
+bad_data_mask = np.any(~np.isfinite(V[:31,:]), axis=0)
+sum(bad_data_mask)
+bad_data_mask.shape
+dcfd.shape
+dcfd = dcfd[:, ~bad_data_mask]
+dcfd.shape
+V = V[:, ~bad_data_mask]
+V.shape
+plt.pcolormesh(V[:31,:], t[np.newaxis,:], dcfd[:31,:])
+x.shape
+get_ipython().run_line_magic('pinfo', 'pcolormesh')
+plt.pcolormesh(V[:31,:], t[np.newaxis,:], dcfd[:31,:])
+plt.pcolormesh(V[3:31,:], t[np.newaxis,:], dcfd[3:31,:])
+t
+t.shape
+t[0].sec
+f = t[0]
+f.second
+f.time()
+f.ctime
+f.ctime()
+f.timestamp
+f.timestamp()
+ts = np.array([s.timestamp() for s in t])
+ts
+ts.shape
+ts = ts[~bad_data_mask]
+plt.pcolormesh(V[3:31,:], ts[np.newaxis,:], dcfd[3:31,:])
+ts
+ts.shape
+V.shape
+dcfd.shape
+ts = np.vstack([ts]*128)
+ts.shape
+plt.pcolormesh(V[:31,:], ts[:31,:], dcfd[:31,:])
+plt.pcolormesh(ts[:31,:], V[:31,:], dcfd[:31,:])
+plt.pcolormesh(ts[:31,:], V[:31,:], np.log(dcfd[:31,:]))
+plt.yscale('log')
+t = t[~bad_data_mask]
+t
+plt.pcolormesh(ts[:31,:], V[:31,:], np.log(dcfd[:31,:]))
+plt.yscale('log'); plt.colorbar();
+import matplotlib.colors as colors
+plt.pcolormesh(ts[:31,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1000))
+plt.yscale('log'); plt.colorbar();
+plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1000))
+plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1000), yscale='log')
+plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1000))
+plt.yscale('log'); plt.colorbar();
+get_ipython().run_line_magic('logstart', '/home/ross/repos/presentation-uofm-2020/devlogs/parker_probe.log')
