@@ -10,3 +10,5 @@ mypy
 dask[array]
 git+https://github.com/numpy/numpy-stubs@master#numpy-stubs
 rise
+tqdm
+requests
