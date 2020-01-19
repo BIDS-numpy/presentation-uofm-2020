@@ -5,4 +5,4 @@
 .mypy_cache/*
 venv/*
 # Ignore large datasets
-data/parker_probe_spc_data_subset_10-31-18.npz
+data/parker_probe_spcL2_data_11-08-18.npz
