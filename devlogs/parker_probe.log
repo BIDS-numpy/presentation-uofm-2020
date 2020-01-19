@@ -1,74 +1,31 @@
 # IPython log file
 
+fname = "$HOME/Downloads/psp_swp_spc_l2i_20181102_v01.cdf"
 from spacepy import pycdf
-cdf = pycdf.CDF('/home/ross/Downloads/psp_swp_spc_l2i_20181031_v01.cdf')
+cdf = pycdf.CDF(fname)
 t = cdf['Epoch'][:]
-mv_lo = cdf['mv_lo'][:,:]
-mv_hi = cdf['mv_hi'][:,:]
-mv_hi
-dcfd = cdf['diff_charge_flux_density'][:,:]
-dcfd.shape
-for arr in (mv_lo, mv_hi, dcfd):
-    arr[arr == -1e-31] = np.nan
-    
-mv_lo
-mv_lo[mv_lo == -1e-31] = np.nan
-mv_hi[mv_hi == -1e-31] = np.nan
-mv_lo
+mv_lo = cdf['mv_lo'][:,:].T
+mv_hi = cdf['mv_hi'][:,:].T
+dcfd = cdf['diff_charge_flux_density'][:,:].T
+t.shape
+mv_lo.shape
+mv_hi.shape
 for arr in (mv_lo, mv_hi, dcfd):
     arr[arr == -1e31] = np.nan
     
-    
-mv_lo
-mv_hi
-dcfd
-t
 V = (mv_hi + mv_lo) / 2
 bad_data = np.any(~np.isfinite(V[:31,:]), axis=0)
-V = V[:, ~bad_data]
+bad_data.shape
+bad_data.sum()
 t = t[~bad_data]
-V = V.T
-dcfd = dcfd.T
-bad_data = np.any(~np.isfinite(V[:31,:]), axis=0)
 V = V[:, ~bad_data]
-t = t[~bad_data]
 dcfd = dcfd[:, ~bad_data]
 import matplotlib.colors as colors
-plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=dcfd.max()))
-t
-t.shape
-V.shape
-V
-dcfd.shape
-dcfd.max()
-dcfd[np.isfinite(dcfd)].max()
-plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1e3))
-plt.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1e3))
-plt.yscale('log'); plt.colorbar();
 fig, ax = plt.subplots()
-ax.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1e3))
-ax.set_yscale('log')
-fig.colorbar()
-fig.colorbar(ax)
-fig.colorbar(ax.images[0])
-get_ipython().run_line_magic('pinfo', 'ax.collections')
-fig.colorbar(ax.collections[0])
-fig, ax = plt.subplots()
-ax.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=1e3))
-ax.set_yscale('log')
-fig.colorbar(ax.collections[0])
-fig.autofmt_xdate()
-fig, ax = plt.subplots()
-ax.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], norm=colors.LogNorm(vmin=1, vmax=950.))
-ax.set_yscale('log')
-fig.colorbar(ax.collections[0])
-fig.autofmt_xdate()
-fig, ax = plt.subplots()
-ax.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], cmap=cm.plasma, norm=colors.LogNorm(vmin=1, vmax=950.))
+ax.pcolormesh(t[np.newaxis,:], V[:31,:], dcfd[:31,:], cmap=cm.plasma, norm=colors.LogNorm(vmin=1, vmax=dcfd[np.isfinite(dcfd)].max()))
 ax.set_yscale('log')
 fig.colorbar(ax.collections[0])
 fig.autofmt_xdate()
 fig.tight_layout()
 get_ipython().run_line_magic('logstart', '/home/ross/repos/presentation-uofm-2020/devlogs/parker_probe.log')
-xit
 exit()
