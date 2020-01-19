@@ -4,3 +4,5 @@
 .ipynb_checkpoints/*
 .mypy_cache/*
 venv/*
+# Ignore large datasets
+data/parker_probe_spc_data_subset_10-31-18.npz
