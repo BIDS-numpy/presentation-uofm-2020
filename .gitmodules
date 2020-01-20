@@ -1,0 +1,6 @@
+[submodule "event_horizons_example/2019-D01-02"]
+	path = event_horizons_example/2019-D01-02
+	url = https://github.com/eventhorizontelescope/2019-D01-02.git
+[submodule "event_horizons_example/2019-D01-01"]
+	path = event_horizons_example/2019-D01-01
+	url = https://github.com/eventhorizontelescope/2019-D01-01.git
