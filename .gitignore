@@ -6,3 +6,5 @@
 venv/*
 # Ignore large datasets
 data/parker_probe_spcL2_data_11-08-18.npz
+# Ignore cruft from event horizons example
+out.fits

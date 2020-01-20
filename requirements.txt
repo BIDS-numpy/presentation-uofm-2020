@@ -1,14 +1,24 @@
-numpy
-scipy
-matplotlib
+# For the presentation
+rise
 jupyter
 notebook
-nibabel
-pycbc
-lalsuite
-mypy
-dask[array]
-git+https://github.com/numpy/numpy-stubs@master#numpy-stubs
-rise
+numpy
+matplotlib
 tqdm
 requests
+# Neuroimaging example
+nibabel
+# Gravitational wave example
+scipy
+pycbc
+lalsuite
+# Event Horizon Telescope example
+cython
+pandas
+git+https://github.com/pyNFFT/pyNFFT.git@master#pynfft
+git+https://github.com/achael/eht-imaging.git@master#ehtim
+# Array function protocol example
+dask[array]
+# NumPy type annotations
+mypy
+git+https://github.com/numpy/numpy-stubs@master#numpy-stubs
