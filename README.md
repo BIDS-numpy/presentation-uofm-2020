@@ -91,3 +91,10 @@ in presentation mode.
    again.
    Moving between slides seems to trigger a better repositioning of the 
    cell output.
+
+# License
+
+The code in this presentation is provided under the
+[BSD-3 License](https://opensource.org/licenses/BSD-3-Clause).
+Note however that some of the code used in the examples reproducing scientific
+results use different licenses.
