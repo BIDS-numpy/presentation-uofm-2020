@@ -2,13 +2,14 @@
 
 Presentation on NumPy to the University of Michigan EECS Department, Jan. 2020.
 
-# Running the notebook
+# Installation
 
 The presentation is in the form of a Jupyter notebook.
 [Rise](https://rise.readthedocs.io/en/maint-5.6/) is used to turn the 
 notebook into a live presentation. 
-There are two steps to making this work: getting an environment set up with 
-all of the necessary dependencies, then running the slide show.
+There are three steps to making this work: getting an environment set up with 
+all of the necessary dependencies, and getting the code/data for the 
+Event Horizon Telescope example.
 
 ## Step 1: Setting up the environment
 
@@ -53,7 +54,23 @@ pip install -r requirements.txt
   The build process should continue past the error, ultimately resulting in
   the successful build of `pynfft`.
 
-## Step 2: Viewing the presentation
+## Step 2: Getting data and code for the examples
+
+**TL;DR** : `git submodule update --init`
+
+The data and code for most of the examples in the presentation are included
+in this repository.
+At the very least the code to download necessary data is embedded in the 
+presentation itself.
+The exception is the data and imaging pipeline for reproducing the Event
+Horizon Telescope image of the supermassive black hole at the center of M87.
+I've included the imaging pipeline and data from the 
+[official Event Horizon Github Organization](https://github.com/eventhorizontelescope)
+as submodules of this repository.
+In order for the EHT example to work, you must initialized the submodules:
+`git submodule update --init`.
+
+# Running/Viewing the presentation
 
 Launch `jupyter notebook` in the top-level directory and open 
 `presentation.ipynb` in the browser.
@@ -65,3 +82,12 @@ More advanced navigation commands can be found in the
 [Rise documentation](https://rise.readthedocs.io/en/maint-5.6/) or by clicking
 on the help button (question mark in the lower-left corner of the slides) when
 in presentation mode.
+
+### Known issues
+
+ * For whatever reason, figures produced via code in the notebook aren't 
+   always visible when they are produced. 
+   The hacky-way around this problem is to simply go back a slide then forward
+   again.
+   Moving between slides seems to trigger a better repositioning of the 
+   cell output.
