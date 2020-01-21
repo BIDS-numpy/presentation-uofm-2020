@@ -41,6 +41,18 @@ Now, finally, install the dependencies:
 pip install -r requirements.txt
 ```
 
+### Known issues
+
+* **Error when building `pynfft` wheels from source**
+
+  If installing `pynfft` via `pip install -r requirements.txt`, you will likely
+  see a build error complaining about not being able to find dependency
+  libraries.
+  The wheels must be built from source because those hosted on PyPI are out of
+  incompatible with NFFT >= 3.3.
+  The build process should continue past the error, ultimately resulting in
+  the successful build of `pynfft`.
+
 ## Step 2: Viewing the presentation
 
 Launch `jupyter notebook` in the top-level directory and open 
