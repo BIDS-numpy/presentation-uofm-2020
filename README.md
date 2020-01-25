@@ -17,6 +17,31 @@ Start by installing all of the dependencies for the presentation using your
 preferred environment manager (`virtualenv`, `conda`, etc.).
 The dependencies are listed in `requirements.txt`.
 
+### External dependencies
+
+Two examples rely on external dependencies:
+ 1. The Event Horizon Telescope black hole imaging pipeline depends on 
+    [NFFT](https://github.com/NFFT/nfft)
+ 2. The original data from the parker probe is in NASA's 
+    [CDF format](https://cdf.gsfc.nasa.gov/).
+
+There is a conda recipe for `pynfft`, so if you are using conda for package
+management, you can let it handle everything for you.
+
+```
+conda install -c conda-forge pynfft
+```
+
+Unfortunately there is not a conda recipe for `pycdf` (at least, not that I
+found).
+In order to avoid the need for you to build the CDF library from source, I've
+converted a subset of the data that is relevant for the example in this 
+presentation to `.npz` format so it can be read-in by `numpy` directly.
+The download of this converted dataset is included in the notebook.
+If you want to access the original data (or any of the other parker probe data)
+you will need to 
+[build CDF from source](https://spacepy.github.io/install.html).
+
 ### Detailed instructions
 
 If you don't have a favorite environment manager, use python's builtin
