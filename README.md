@@ -108,6 +108,29 @@ More advanced navigation commands can be found in the
 on the help button (question mark in the lower-left corner of the slides) when
 in presentation mode.
 
+## Versioning
+
+Some cells from the notebook are skipped for the purposes of limiting the time
+of the live presentation.
+The subset of slides that were presented is on `master`. 
+If you would like to see *all* of the slides in presentation mode, checkout
+the `all-slides` branch.
+
+## Static copies
+
+`RISE` is required to view the presentation in interactive mode.
+Static, html versions of the presentation (with all visible cells executed) 
+are available in the `static/` directory.
+The static presentation was created using `nbconvert`:
+
+```bash
+jupyter nbconvert --to slides --ExecutionPreprocessor.timeout=60 --execute presentation.ipynb
+```
+
+Note that the static copy of the presentation is provided for convenience and
+does not reproduce the exact format of the interactive form of the
+presentation.
+
 ### Known issues
 
  * For whatever reason, figures produced via code in the notebook aren't 
@@ -116,6 +139,10 @@ in presentation mode.
    again.
    Moving between slides seems to trigger a better repositioning of the 
    cell output.
+ * For converting to static slides via `nbconvert`, the matplotlib backend
+   must be changed from `nbagg`.
+   This can be accomplished by replacing `%matploblib notebook` with
+   `%matplotlib inline` in the first cell of `presentation.ipynb`.
 
 # License
 
